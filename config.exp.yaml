@@ -1,0 +1,23 @@
+server:
+  listen: "localhost:11434" 
+  mode: "debug"   # gin mode: release debug test
+  version: 0.6.6  # simulated ollama version
+
+endpoints:
+  - id: deepseek
+    base_url: https://api.deepseek.com/v1
+    api_key: "**DEEPSEEK_API_KEY**"
+  - id: cloudflare-gemini
+    base_url: https://gateway.ai.cloudflare.com/v1/{ACCOUNT_ID}/{GATEWAY_ID}/google-ai-studio/v1beta/openai
+    api_key_name: cf-aig-authorization # http authorization header name for api_key
+    api_key: "**GATEWAY_KEY**"  # BYOK
+    model_trim:
+      prefix: models/ # remove prefix from modelId
+  - id: gemini
+    base_url: https://generativelanguage.googleapis.com/v1beta/openai/
+    api_key: "**GOOGLE_AI_STUDIO_KEY**"
+    model_trim:
+      prefix: models/   # remove prefix from modelId
+      # suffix: ***
+    # headers: # custom http header
+    #   key: value
