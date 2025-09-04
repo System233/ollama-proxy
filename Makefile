@@ -16,10 +16,10 @@ build:
 	go build -o $(APP_NAME)
 
 # 构建所有平台
-build-all: tidy $(foreach platform,$(PLATFORMS),build-$(platform))
+build-all: $(foreach platform,$(PLATFORMS),build-$(platform))
 
 # 构建特定平台
-build-%:
+build-%: tidy
 	$(eval OS = $(word 1,$(subst -, ,$*)))
 	$(eval ARCH = $(word 2,$(subst -, ,$*)))
 	GOOS=$(OS) GOARCH=$(ARCH) go build -o dist/$(APP_NAME)-$(OS)-$(ARCH)$(if $(findstring windows,$(OS)),.exe,)
