@@ -38,13 +38,18 @@ It transforms multiple OpenAI-compatible API endpoints into a unified Ollama API
     ```
 
 2.  **Run the Service**:
-    You can run the service directly or build a binary.
-
+    Go to the [Release](https://github.com/System233/ollama-proxy/releases/) page and download the version that matches your system.
     ```bash
+    
+    # download ollama-proxy (win64 version)
+    curl -L -o ollama-proxy https://github.com/System233/ollama-proxy/releases/latest/download/ollama-proxy-windows-amd64.exe
+
+    # run ollama-proxy
+
     ./ollama-proxy [config.yaml]
     ```
 
-3.  **Make Requests**:
+4.  **Make Requests**:
     Once the proxy is running, you can interact with it through the Ollama-style interface to communicate with OpenAI APIs, solving the issue where some plugins don't provide OpenAI-compatible endpoint configuration.
 
     ```bash
@@ -69,3 +74,7 @@ It transforms multiple OpenAI-compatible API endpoints into a unified Ollama API
 ## License
 
 This project is licensed under the [MIT License](./LICENSE).
+
+## Note
+
+This proxy does not fully emulate all of **Ollama**'s APIs, including **Ollama**'s unique `/api/generate` and `/api/chat`. **Ollama** added an **OpenAI-style** conversational API in a certain version, and **Copilot** lazily uses this API for requests.

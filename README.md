@@ -38,9 +38,13 @@ Ollama Proxy 是一个转换代理，用于在GitHub copilot中提供类似OpenA
     ```
 
 2.  **运行服务**:
-    你可以直接运行服务，或者构建一个二进制文件。
+    前往[Release](https://github.com/System233/ollama-proxy/releases/)下载适合你操作系统的版本。
 
     ```bash
+    # 下载 ollama-proxy（示例为windows x64版本）
+    curl -L -o ollama-proxy https://github.com/System233/ollama-proxy/releases/latest/download/ollama-proxy-windows-amd64.exe
+
+    # 启动 ollama-proxy
     ./ollama-proxy [config.yaml]
     ```
 
@@ -69,3 +73,8 @@ Ollama Proxy 是一个转换代理，用于在GitHub copilot中提供类似OpenA
 ## 许可证
 
 本项目采用 [MIT 许可证](./LICENSE)。
+
+
+## 注意
+
+本代理尚未完全模拟 **Ollama** 的所有接口，包括 **Ollama** 特有的`/api/generate`和`/api/chat`，**Ollama** 在某个版本中添加了 **OpenAI风格** 的对话接口，而 **Copilot** 偷懒使用了该接口进行请求。
