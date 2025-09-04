@@ -8,6 +8,8 @@ Ollama Proxy 是一个转换代理，用于在GitHub copilot中提供类似OpenA
 * **Copilot测试版** 中的通用OpenAI端口根本无法使用, 甚至模型列表都不能显示（microsoft/vscode-copilot-release#13662）.
 * **Copilot** 经常出现`no auth credentials found`，模型丢失等问题，且迟迟不修复([microsoft/vscode#issue](https://github.com/microsoft/vscode/issues?q=is%3Aissue%20%22No%20auth%20credentials%20found%22))。
 
+[English](./README.EN.md), [中文](./README.md)
+
 ## 功能
 
 - **端点聚合**: 将多个 OpenAI 模型服务合并到单个Ollama接入点。
